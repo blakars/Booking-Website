@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?><project name="Untitled Gantt Project" company="" webLink="http://" view-date="2022-04-01" view-index="0" gantt-divider-location="530" resource-divider-location="300" version="3.2.3240" locale="de_DE">
+    <description/>
+    <view zooming-state="default:8" id="gantt-chart">
+        <field id="tpd3" name="Vorgang" width="343" order="0"/>
+        <field id="tpd4" name="Anfang" width="85" order="1"/>
+        <field id="tpd5" name="Ende" width="86" order="2"/>
+        <option id="filter.completedTasks" value="false"/>
+        <option id="color.recent">
+            <![CDATA[#f4f4f4]]>
+        </option>
+    </view>
+    <view id="resource-table">
+        <field id="0" name="Ressource" width="210" order="0"/>
+        <field id="1" name="Rolle" width="86" order="1"/>
+    </view>
+    <!-- -->
+    <calendars>
+        <day-types>
+            <day-type id="0"/>
+            <day-type id="1"/>
+            <default-week id="1" name="default" sun="0" mon="0" tue="0" wed="0" thu="0" fri="0" sat="0"/>
+            <only-show-weekends value="false"/>
+            <overriden-day-types/>
+            <days/>
+        </day-types>
+    </calendars>
+    <tasks empty-milestones="true">
+        <taskproperties>
+            <taskproperty id="tpd0" name="type" type="default" valuetype="icon"/>
+            <taskproperty id="tpd1" name="priority" type="default" valuetype="icon"/>
+            <taskproperty id="tpd2" name="info" type="default" valuetype="icon"/>
+            <taskproperty id="tpd3" name="name" type="default" valuetype="text"/>
+            <taskproperty id="tpd4" name="begindate" type="default" valuetype="date"/>
+            <taskproperty id="tpd5" name="enddate" type="default" valuetype="date"/>
+            <taskproperty id="tpd6" name="duration" type="default" valuetype="int"/>
+            <taskproperty id="tpd7" name="completion" type="default" valuetype="int"/>
+            <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
+            <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
+        </taskproperties>
+        <task id="6" name="Geschäftsvorschlag" color="#8cb6ce" meeting="false" start="2022-04-02" duration="10" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true">
+            <task id="54" name="Kick-Off Meeting" color="#8cb6ce" meeting="false" start="2022-04-02" duration="1" complete="0" thirdDate="2022-03-21" thirdDate-constraint="0" expand="true"/>
+            <task id="40" name="Vorbereitung Geschäftsvorschlag &amp; grafischer Prototyp" color="#8cb6ce" meeting="false" start="2022-04-02" duration="10" complete="0" thirdDate="2022-05-09" thirdDate-constraint="0" expand="true"/>
+            <task id="10" name="Abgabe Teil 1 // GV und Prototyp" color="#8cb6ce" meeting="true" start="2022-04-12" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="14" name="HTML/CSS -Prototyp" color="#8cb6ce" meeting="false" start="2022-04-13" duration="20" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true">
+            <task id="55" name="Erstellung statischer HTML/CSS-Prototyp" color="#8cb6ce" meeting="false" start="2022-04-13" duration="20" complete="0" thirdDate="2022-03-26" thirdDate-constraint="0" expand="true"/>
+            <task id="16" name="Abgabe Teil 2 // HTML/CSS -Prototyp" color="#8cb6ce" meeting="true" start="2022-05-03" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="20" name="Dynamischer Prototyp" color="#8cb6ce" meeting="false" start="2022-05-04" duration="20" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true">
+            <task id="56" name="Erstellung dynamischer Prototyp (Frontend)" color="#8cb6ce" meeting="false" start="2022-05-04" duration="20" complete="0" thirdDate="2022-03-01" thirdDate-constraint="0" expand="true"/>
+            <task id="57" name="Erstellung Datenbank (Backend)" color="#8cb6ce" meeting="false" start="2022-05-04" duration="20" complete="0" thirdDate="2022-03-01" thirdDate-constraint="0" expand="true"/>
+            <task id="31" name="Abgabe Teil 3 // Dynamischer Prototyp" color="#8cb6ce" meeting="true" start="2022-05-24" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="39" name="Release" color="#8cb6ce" meeting="false" start="2022-05-25" duration="34" complete="0" thirdDate="2022-05-10" thirdDate-constraint="1" expand="true">
+            <task id="58" name="Vorbereitung Release" color="#8cb6ce" meeting="false" start="2022-05-25" duration="34" complete="0" thirdDate="2022-03-01" thirdDate-constraint="0" expand="true"/>
+            <task id="32" name="Abgabe Teil 4 // Release &amp; Präsentation" color="#8cb6ce" meeting="true" start="2022-06-28" duration="0" complete="0" thirdDate="2022-03-28" thirdDate-constraint="0" expand="true"/>
+        </task>
+    </tasks>
+    <resources>
+        <resource id="0" name="Karsten Blank" function="Default:0" contacts="blankkar@hs-albsig.de" phone=""/>
+        <resource id="1" name="Sebastian Ray" function="Default:0" contacts="raysebas@hs-albsig.de" phone=""/>
+        <resource id="2" name="Fabian Gross" function="Default:0" contacts="grossfab@hs-albsig.de" phone=""/>
+    </resources>
+    <allocations>
+        <allocation task-id="40" resource-id="2" function="Default:0" responsible="true" load="100.0"/>
+    </allocations>
+    <vacations/>
+    <previous/>
+    <roles roleset-name="Default"/>
+    <roles roleset-name="SoftwareDevelopment"/>
+</project>
