@@ -65,25 +65,50 @@
                         <form class="was-validated">
                             <div class="row">
                                 <div class="col-md">
-                                    <label for="name" class="float-left">Name:</label>
-                                    <input type="text" class="form-control " id="name" placeholder="Namen eingeben" name="name" required>
-                                    <div class="valid-feedback align-left margin">Danke! :)</div>
-                                    <div class="invalid-feedback align-left margin">Hier fehlt doch noch was? :)</div>                       
+                                    <label for="nachname" class="float-left">Nachname:</label>
+                                    <input type="text" class="form-control " id="nachname" placeholder="Nachname eingeben" name="nachname" required>
+                                    <p></p>                     
                                 </div>
                                 <div class="col-md">
-                                    <label for="email" class="float-left">Email:</label>
-                                    <input type="text" class="form-control" id="email" placeholder="Email eingeben" name="email" required>
-                                    <div class="valid-feedback align-left margin">Danke! :)</div>
-                                    <div class="invalid-feedback align-left margin">Hier fehlt doch noch was? :)</div> 
+                                    <label for="vorname" class="float-left">Vorname:</label>
+                                    <input type="text" class="form-control" id="vorname" placeholder="Vorname eingeben" name="vorname" required>
+                                    <p></p> 
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="col-md">
-                                    <label for="nachricht" class="float-left">Nachricht:</label>
-                                    <textarea class="form-control" rows="6" id="nachricht" placeholder="Nachricht eingeben" name="nachricht" required></textarea>
-                                    <div class="valid-feedback align-left margin">...jetzt nur noch abschicken! :)</div>
-                                    <div class="invalid-feedback align-left margin">Hier fehlt doch noch was? :)</div> 
-                                </div>  
+                                    <label for="email" class="float-left">Email:</label>
+                                    <input type="text" class="form-control " id="email" placeholder="Email eingeben" name="email" required>
+                                    <p></p>                     
+                                </div>
+                                <div class="col-md">
+                                    <label for="handynr" class="float-left">Handynummer:</label>
+                                    <input type="text" class="form-control" id="handynr" placeholder="Handynummer eingeben" name="handynr" required>
+                                    <p></p> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="beginn" class="float-left">Beginn:</label>
+                                    <input type="date" class="form-control " id="beginn" name="beginn" required>
+                                    <p></p> 
+                                </div>
+                                <div class="col-md">
+                                    <label for="ende" class="float-left">Ende:</label>
+                                    <input type="date" class="form-control " id="ende" name="ende" required>
+                                    <p></p> 
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for ="bootslaenge" class="float-left">Bootslänge:</label>
+                                    <select id="bootslaenge" name="bootslaenge" class="form-control" required>
+                                        <option value="lt5">bis 5m</option>
+                                        <option value="5to10">5 bis 10m</option>
+                                        <option value="gt10">größer als 10m</option>
+                                    </select>
+                                    <p></p>
+                                </div>
                             </div>
                             <div class="row">
                                 <div class="col-md">
