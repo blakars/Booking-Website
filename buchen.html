@@ -112,7 +112,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md">
-                                    <button type="submit" class="btn btn-secondary float-left">Abschicken</button>
+                                    <button id="submit" class="btn btn-secondary float-left">Abschicken</button>
                                 </div>
                             </div>
 
@@ -125,7 +125,28 @@
         <footer class="container-fluid bg-3">
             <p>&copy; hafen-albsig2022</p>
         </footer>
-    
+        <script>
+            $('#submit').click(function() {
+            console.log('button submit clicked');
+            var result = {};
+            $.each($('form').serializeArray(),function() {
+                result[this.name]=this.value;
+            });
+			$.ajax({
+                url: 'http://localhost:8000/api/xyz', //Update URL
+                method: 'post',
+				contentType: 'application/json; charset=utf-8',
+                cache: false,
+				data: JSON.stringify(result)
+            }).done(function (response) {
+                console.log(response);
+                $('#output').html(JSON.stringify(response));
+            }).fail(function (jqXHR, statusText, error) {
+                console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                $('#output').html('Ein Fehler ist aufgetreten');
+            });
+        });
+        </script>
 
   </body>
 </html>
