@@ -3,6 +3,7 @@ body {
     line-height: 1.8;
     color: rgb(136, 130, 130);
     background-color:rgb(31, 52, 109);
+    overflow-y:scroll;
 }
 
 .navbar {

@@ -60,7 +60,7 @@
                     </div>
                     <div class="col-md">
                         <p class="margin"></p>
-                        <h3 class="margin align-left">... jetzt bequem online buchen!</h3>
+                        <h3 class="margin align-left">... jetzt bequem online anfragen!</h3>
                         <p class="margin inhalt">Wir brauchen nur noch ein paar Informationen von dir.</p>
                         <form class="was-validated">
                             <div class="row">
@@ -112,7 +112,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md">
-                                    <button id="submit" class="btn btn-secondary float-left">Abschicken</button>
+                                    <button id="submit" class="btn btn-secondary float-left">Anfrage stellen</button>
                                 </div>
                             </div>
 
@@ -139,11 +139,11 @@
                 cache: false,
 				data: JSON.stringify(result)
             }).done(function (response) {
+                alert("Vielen Dank für Ihre Anfrage. Wir melden uns schnellstmöglich.");
                 console.log(response);
-                $('#output').html(JSON.stringify(response));
             }).fail(function (jqXHR, statusText, error) {
+                alert("Ein Fehler ist aufgetreten. Bitte erneut versuchen.");
                 console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
-                $('#output').html('Ein Fehler ist aufgetreten');
             });
         });
         </script>

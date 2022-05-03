@@ -54,14 +54,31 @@
                 <div class="row">
                     <section class="col-md">
                         <p class="margin"></p>
-                        <h3 class="margin">admin</h3>
-                        <p class="margin">Hier hat nur der Admin etwas zu suchen...</p>
-                        <img src="lib/faq2.jpg" class="img-fluid rounded-circle" alt="faq2">
+                        <h3 class="margin">Buchungsübersicht</h3>
+                        <p class="margin align-left">Platzhalter: hier sollen die Buchungsanfragen dynamisch angezeigt werden...</p>
                     </section>
                     <section class="col-md">
                         <p class="margin"></p>
-                        <h3 class="margin align-left">Hier können Buchungen storniert werden:</h3>
-                        <button type="submit" class="btn btn-secondary float-left">Storno</button>
+                        <h3 class="margin align-left">Hier können Buchungsanfragen bearbeitet werden:</h3>
+                        <form id="single-delete">
+                            <div class="row">
+                                <div class="col-md">
+                                    <label for="del-id" class="float-left">Zu löschende ID:</label>
+                                    <input type="text" class="form-control " id="del-id" placeholder="ID eingeben" name="del-id" required>
+                                    <p></p>
+                                    <button id="delete-by-id" class="btn btn-secondary float-left">Einzelne Anfrage löschen</button>
+                                    <p></p>
+                                </div>
+                            </div>
+                        </form>
+                        <form id="all-delete">
+                            <div class="row">
+                                <div class="col-md">
+                                    <p></p>
+                                    <button id="delete-all" class="btn btn-secondary float-left">Alle Anfragen löschen</button>
+                                </div>
+                            </div>
+                        </form>
                     </section>
                 </div>
             </section>
