@@ -115,7 +115,6 @@
                                     <button id="submit" class="btn btn-secondary float-left">Anfrage stellen</button>
                                 </div>
                             </div>
-
                         </form>
                 </div>
                 
@@ -139,10 +138,13 @@
                 cache: false,
 				data: JSON.stringify(result)
             }).done(function (response) {
-                alert("Vielen Dank für Ihre Anfrage. Wir melden uns schnellstmöglich.");
+                /*Hier JSON Objekt noch in Konsole ausgeben für Debugging
+                Außerdem fehlt noch das Forwarding auf die Erfolgsbuchung
+                let url = "https://www.w3docs.com";
+                window.location.href = url; 
+                Clientseitige Überprüfung und Serverseitige Überprüfung*/
                 console.log(response);
             }).fail(function (jqXHR, statusText, error) {
-                alert("Ein Fehler ist aufgetreten. Bitte erneut versuchen.");
                 console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
             });
         });
