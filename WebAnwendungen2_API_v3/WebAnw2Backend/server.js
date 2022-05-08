@@ -68,7 +68,7 @@ try {
 
     var webServer = app.listen(HTTP_PORT, () => {
         console.log('Listening at localhost, port ' + HTTP_PORT);
-        console.log('\nUsage: http://localhost:' + HTTP_PORT + TOPLEVELPATH + "/SERVICENAME/SERVICEMETHOD/....");
+        console.log('\nUsage: http://localhost:' + HTTP_PORT + TOPLEVELPATH + '/SERVICENAME/SERVICEMETHOD/....');
         console.log('\n\n-----------------------------------------');
         console.log('exit / stop Server by pressing 2 x CTRL-C');
         console.log('-----------------------------------------\n\n');

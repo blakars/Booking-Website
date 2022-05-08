@@ -112,7 +112,7 @@
                             </div>
                             <div class="row">
                                 <div class="col-md">
-                                    <button id="submit" class="btn btn-secondary float-left">Anfrage stellen</button>
+                                    <button id="addrequest" class="btn btn-secondary float-left">Anfrage stellen</button>
                                 </div>
                             </div>
                         </form>
@@ -125,7 +125,7 @@
             <p>&copy; hafen-albsig2022</p>
         </footer>
         <script>
-            $('#submit').click(function() {
+            $('#addrequest').click(function() {
             console.log('button submit clicked');
             var result = {};
             $.each($('form').serializeArray(),function() {
