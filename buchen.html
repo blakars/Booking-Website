@@ -62,7 +62,7 @@
                         <p class="margin"></p>
                         <h3 class="margin align-left">... jetzt bequem online anfragen!</h3>
                         <p class="margin inhalt">Wir brauchen nur noch ein paar Informationen von dir.</p>
-                        <form class="was-validated">
+                        <form class="was-validated" id="form1">
                             <div class="row">
                                 <div class="col-md">
                                     <label for="nachname" class="float-left">Nachname:</label>
@@ -125,6 +125,15 @@
             <p>&copy; hafen-albsig2022</p>
         </footer>
         <script>
+
+            window.addEventListener("load",function() {
+                var form =document.getElementById("form1");
+
+                form.addEventListener("submit",function(event){
+                    event.preventDefault();
+                });
+            });    
+
             $('#addrequest').click(function() {
             console.log('button submit clicked');
             var result = {};
@@ -139,12 +148,13 @@
 				data: JSON.stringify(result)
             }).done(function (response) {
                 /*Hier JSON Objekt noch in Konsole ausgeben für Debugging
-                Außerdem fehlt noch das Forwarding auf die Erfolgsbuchung
+                Außerdem fehlt noch das Forwarding auf die Erfolgsbuchung, Clientseitige Überprüfung und Serverseitige Überprüfung*/
                 let url = "https://www.w3docs.com";
-                window.location.href = url; 
-                Clientseitige Überprüfung und Serverseitige Überprüfung*/
+                window.location.href = url;
+                console.log("jetzt bin ich in der Done-Funktion");
                 console.log(response);
             }).fail(function (jqXHR, statusText, error) {
+                console.log("jetzt bin ich in der Fail-Funktion");
                 console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
             });
         });
