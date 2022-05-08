@@ -143,9 +143,13 @@
                 let url = "https://www.w3docs.com";
                 window.location.href = url; 
                 Clientseitige Überprüfung und Serverseitige Überprüfung*/
-                console.log(response);
+                console.log("DONE");
+                //console.log(response);
             }).fail(function (jqXHR, statusText, error) {
-                console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                //let url = "https://www.w3docs.com";
+                //window.location.href = url;
+                console.log("FAIL"); 
+                //console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
             });
         });
         </script>
