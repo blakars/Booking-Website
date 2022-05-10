@@ -52,14 +52,33 @@
         <main>
             <section class="container-fluid bg-2">
                 <div class="row">
-                    <section class="col-md">
+                    <section class="col-md-9">
                         <p class="margin"></p>
                         <h3 class="margin">Buchungsübersicht</h3>
                         <p class="margin align-left">Platzhalter: hier sollen die Buchungsanfragen dynamisch angezeigt werden als Tabelle...</p>
+                        <div class="table-responsive-md">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">ID</th>
+                                        <th scope="col">Nachname</th>
+                                        <th scope="col">Vorname</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Handynummer</th>
+                                        <th scope="col">Beginn</th>
+                                        <th scope="col">Ende</th>
+                                        <th scope="col">Bootslänge</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <div id="target"></div>
+                                </tbody>
+                            </table>
+                        </div>
                     </section>
                     <section class="col-md">
                         <p class="margin"></p>
-                        <h3 class="margin align-left">Hier können Buchungsanfragen bearbeitet werden:</h3>
+                        <h3 class="margin align-left">Buchungsanfragen bearbeiten:</h3>
                         <form id="single-delete">
                             <div class="row">
                                 <div class="col-md">
