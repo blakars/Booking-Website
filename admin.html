@@ -55,9 +55,8 @@
                     <section class="col-md-9">
                         <p class="margin"></p>
                         <h3 class="margin">Buchungsübersicht</h3>
-                        <p class="margin align-left">Platzhalter: hier sollen die Buchungsanfragen dynamisch angezeigt werden als Tabelle...</p>
                         <div class="table-responsive-md">
-                            <table class="table">
+                            <table class="table" id="datentabelle">
                                 <thead>
                                     <tr>
                                         <th scope="col">ID</th>
@@ -71,7 +70,6 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    <div id="target"></div>
                                 </tbody>
                             </table>
                         </div>
@@ -105,7 +103,53 @@
         <footer class="container-fluid bg-3">
             <p>&copy; hafen-albsig2022</p>
         </footer>
-    
+        <!-- 
+        <script>
+            $(document).ready(function() {
+            console.log('Document ready, loading data from Service');
 
+            $.ajax({
+                url: 'http://localhost:8000/api/buchungsanfrage/alle',
+                method: 'get',
+                contentType: 'application/json; charset=utf-8',
+                cache: false,
+				dataType: 'json'
+            }).done(function (response) {
+                console.log('Data loaded successfully');
+                console.log(response);
+
+                /* die Idee bei diesem Prinzip ist, dass HTML Code als Text angesehen wird. 
+                    Diesen können wir häppchen-weise in einer Variable zusammen setzen 
+                    und dann auch ausgeben 
+                    Hinweis: Damit man Quotes/doppelte Anführungsstriche NICHT escapen muss, 
+                    kann man bei jQuery einfache Anführungszeichen verwenden    
+                */
+                    
+                // hilfsvariable anlegen
+                var content = '';
+
+                for (i = 0; i < response.length; i++) {
+                    var obj = response[i];
+
+                    content += '<tr>';
+                    content += '<td>' + obj.id + '</td>';
+                    content += '<td>' + obj.bezeichnung + '</td>';
+                    content += '<td>' + obj.steuerSatz.toFixed(2) + ' %</td>';
+                    content += '</tr>';
+                }
+
+                content += '</table>';
+
+                // zusammengesetzen Code im Dokument ausgeben
+                $('#datentabelle').append(content);
+                
+            }).fail(function (jqXHR, statusText, error) {
+                console.log('Error occured');
+                console.log('Response Code: ' + jqXHR.status + ' - Message: ' + jqXHR.responseText);
+                alert(jqXHR.responseText);
+            });
+        });
+        </script>
+        -->
   </body>
 </html>
