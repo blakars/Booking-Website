@@ -14,6 +14,8 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <!--Montserrat-Schrift importieren-->
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <!--jQuery-Validation Plugin-->
+    <script src="js/jquery.validate.js"></script>
     <!--Eigener JS-File-->
     <script src="lib/js1.js"></script>
     <!--Eigener CSS-File-->
@@ -77,18 +79,18 @@
                     <section class="col-md">
                         <p class="margin"></p>
                         <h3 class="margin align-left">Buchungsanfragen bearbeiten:</h3>
-                        <form id="single-delete">
+                        <form id="delete">
                             <div class="row">
                                 <div class="col-md">
                                     <label for="del-id" class="float-left">Zu löschende ID:</label>
                                     <input type="text" class="form-control " id="del-id" placeholder="ID eingeben" name="del-id" required>
                                     <p></p>
-                                    <button id="delete-by-id" class="btn btn-secondary float-left">Einzelne Anfrage löschen</button>
+                                    <button id="delete-by-id" class="btn btn-secondary float-left">Anfrage löschen</button>
                                     <p></p>
                                 </div>
                             </div>
                         </form>
-                        <form id="all-delete">
+                        <!-- <form id="all-delete">
                             <div class="row">
                                 <div class="col-md">
                                     <p></p>
@@ -96,6 +98,7 @@
                                 </div>
                             </div>
                         </form>
+                    -->
                     </section>
                 </div>
             </section>
@@ -103,11 +106,43 @@
         <footer class="container-fluid bg-3">
             <p>&copy; hafen-albsig2022</p>
         </footer>
-        <!-- 
+        
         <script>
+            window.addEventListener("load",function() {
+                var form =document.getElementById("delete");
+                form.addEventListener("submit",function(event){
+                    event.preventDefault();
+                });
+            });
+
+            $('#delete-by-id').click(function() {
+                $('#delete').validate();
+                console.log('button delete clicked');
+                if($('#delete').valid()) {
+                    var id =$('#del-id').val();
+                    $.ajax({
+                        url: 'http://localhost:8000/api/buchungsanfrage/'+id,
+                        method: 'delete',
+                        contentType: 'application/json; charset=utf-8',
+                        cache: false,
+                        /*data: JSON.stringify(result)*/
+                    }).done(function (response) {
+                        /*Hier JSON Objekt noch in Konsole ausgeben für Debugging
+                        Außerdem fehlt noch das Forwarding auf die Erfolgsbuchung, Clientseitige Überprüfung und Serverseitige Überprüfung*/
+                        /*let url = "https://www.w3docs.com";
+                        window.location.href = url;*/
+                        location.reload();
+                        console.log("jetzt bin ich in der Done-Funktion");
+                        console.log(response);
+                    }).fail(function (jqXHR, statusText, error) {
+                        console.log("jetzt bin ich in der Fail-Funktion");
+                        console.log('Response Code: ' + jqXHR.status + ' - Fehlermeldung: ' + jqXHR.responseText);
+                    });
+                }
+            });
+
             $(document).ready(function() {
             console.log('Document ready, loading data from Service');
-
             $.ajax({
                 url: 'http://localhost:8000/api/buchungsanfrage/alle',
                 method: 'get',
@@ -133,8 +168,13 @@
 
                     content += '<tr>';
                     content += '<td>' + obj.id + '</td>';
-                    content += '<td>' + obj.bezeichnung + '</td>';
-                    content += '<td>' + obj.steuerSatz.toFixed(2) + ' %</td>';
+                    content += '<td>' + obj.nachname + '</td>';
+                    content += '<td>' + obj.vorname + '</td>';
+                    content += '<td>' + obj.email + '</td>';
+                    content += '<td>' + obj.handynr + '</td>';
+                    content += '<td>' + obj.beginn + '</td>';
+                    content += '<td>' + obj.ende + '</td>';
+                    content += '<td>' + obj.bootslaenge + '</td>';
                     content += '</tr>';
                 }
 

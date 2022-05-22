@@ -54,11 +54,11 @@ class BuchungsanfrageDao {
 
         return this.loadById(result.lastInsertRowid);
     }
-/*
-    update(id, kennzeichnung = '', bezeichnung = '') {
-        var sql = 'UPDATE Land SET kennzeichnung=?,bezeichnung=? WHERE id=?';
+
+    update(id, nachname = '', vorname = '', email='',handynr='',beginn='',ende='',bootslaenge='') {
+        var sql = 'UPDATE Buchungsanfrage SET nachname=?,vorname=?,email=?,handynr=?,beginn=?,ende=?,bootslaenge=? WHERE id=?';
         var statement = this._conn.prepare(sql);
-        var params = [kennzeichnung, bezeichnung, id];
+        var params = [nachname, vorname, email, handynr, beginn, ende,bootslaenge, id];
         var result = statement.run(params);
 
         if (result.changes != 1) 
@@ -69,7 +69,7 @@ class BuchungsanfrageDao {
 
     delete(id) {
         try {
-            var sql = 'DELETE FROM Land WHERE id=?';
+            var sql = 'DELETE FROM Buchungsanfrage WHERE id=?';
             var statement = this._conn.prepare(sql);
             var result = statement.run(id);
 
@@ -80,7 +80,7 @@ class BuchungsanfrageDao {
         } catch (ex) {
             throw new Error('Could not delete Record by id=' + id + '. Reason: ' + ex.message);
         }
-    }*/
+    }
 
     toString() {
         console.log('Buchungsanfrage [_conn=' + this._conn + ']');
