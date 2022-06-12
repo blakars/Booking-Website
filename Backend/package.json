@@ -1,12 +1,12 @@
 {
-  "name": "webanw2backend",
+  "name": "webanw2frontend",
   "version": "2.0.0",
-  "description": "Backend for WebAnwendungen2 SS2021, mit Dateiupload",
-  "main": "server.js",
+  "description": "Frontend for WebAnwendungen2 SS2021, mit Dateiupload",
+  "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./server.js",
-    "start": "node ./server.js"
+    "dev": "nodemon ./app.js",
+    "start": "node ./app.js"
   },
   "author": "Robert Kuti",
   "license": "ISC",

@@ -1,38 +1,38 @@
 /////////////////
 // workaround / bugfix for linux systems
-Object.fromEntries = l => l.reduce((a, [k,v]) => ({...a, [k]: v}), {})
+Object.fromEntries = l => l.reduce((a, [k,v]) => ({...a, [k]: v}), {})      //???
 /////////////////
 
 const helper = require('./helper.js');
-const fileHelper = require('./fileHelper.js');
+const fileHelper = require('./fileHelper.js');                  //Überprüft Dateien auf Vorhandensein vor dem beschreiben
 console.log('Starting server...');
 
 try {
     // connect database
     console.log('Connect database...');
-    const Database = require('better-sqlite3');
-    const dbOptions = { verbose: console.log };
-    const dbFile = './db/webanw2.sqlite';
-    const dbConnection = new Database(dbFile, dbOptions);
+    const Database = require('better-sqlite3');                 //Einbinden des Moduls 'better-sqlite3'
+    const dbOptions = { verbose: console.log };                 //??? Verbose = mehr Informationen
+    const dbFile = './db/webanw2.sqlite';                       //Verweis auf Speicherort der Datenbank
+    const dbConnection = new Database(dbFile, dbOptions);       //Neue Datenbank erstellen
 
     // create server
     const HTTP_PORT = 8000;
-    const express = require('express');
-    const fileUpload = require('express-fileupload');
-    const cors = require('cors');
-    const bodyParser = require('body-parser');
-    const morgan = require('morgan');
-    const _ = require('lodash');
+    const express = require('express');                         //Einbinden des Moduls 'express'. Webserver selbst
+    const fileUpload = require('express-fileupload');           //Middleware für Dateiuploads
+    const cors = require('cors');                               //Middleware für CORS Requests
+    const bodyParser = require('body-parser');                  //Middleware zum Parsen von Requests. Vereinfacht Requests
+    const morgan = require('morgan');                           //Middleware zum loggen von HTTP Requests.
+    const _ = require('lodash');                                //Middleware für Hilfsfunktionen
 
     console.log('Creating and configuring Web Server...');
-    const app = express();
+    const app = express();                                      //Initialisieren des 'express' Moduls
     
     // provide service router with database connection / store the database connection in global server environment
     app.locals.dbConnection = dbConnection;
 
     console.log('Binding middleware...');
-    app.use(express.static(__dirname + '/public'))
-    app.use(fileUpload({
+    app.use(express.static(__dirname + '/public'))              //Ermöglicht das Ablegen von Dateien in '/public'
+    app.use(fileUpload({                                        //Verarbeiten von Dateiuploads und festlegen deren größe
         createParentPath: true,
         limits: {
             fileSize: 2 * 1024 * 1024 * 1024        // limit to 2MB

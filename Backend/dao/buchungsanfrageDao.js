@@ -1,9 +1,9 @@
 const helper = require('../helper.js');
-
-class BuchungsanfrageDao {
+                                                    //Data Access Object: Programmierschnittstelle (API) für Datenbank Zugriff
+class BuchungsanfrageDao {                          //Klasse 'BuchungsanfrageDao'
 
     constructor(dbConnection) {
-        this._conn = dbConnection;
+        this._conn = dbConnection;                  //_conn ist Name vom Objekt. dbConnection ist übergebener Parameter
     }
 
     getConnection() {
@@ -87,4 +87,4 @@ class BuchungsanfrageDao {
     }
 }
 
-module.exports = BuchungsanfrageDao;
+module.exports = BuchungsanfrageDao;                        //Exportieren der Buchungsanfrage
